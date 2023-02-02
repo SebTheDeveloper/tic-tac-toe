@@ -49,12 +49,52 @@ table {
 
 /* End of Meyer Reset */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&display=swap');
+
 body {
+  font-family: "Roboto Mono", monospace;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+  background-color: #ccc;
+}
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  min-width: 600px;
+  min-height: 600px;
+  background-color: white;
+  box-shadow: 0 3px 10px #00000080;
+  cursor: pointer;
+}
+body,
+.game-square {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.gameboard {
-  min-width: 600px;
-  min-height: 600px;
+.game-square {
+  border: 1px solid black;
+  caret-color: transparent;
+  font-size: 5rem;
+  user-select: none;
+}
+.game-square:active {
+  background-color: lightblue;
+}
+.selected:active {
+  background: url('./images/rick-astley.gif');
+  background-size: cover;
+  color: red;
+}
+#reset {
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: .75em 1.25em;
+  caret-color: transparent;
+}
+.winner {
+  font-size: 2rem;
 }
