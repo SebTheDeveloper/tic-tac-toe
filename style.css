@@ -56,7 +56,7 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   min-height: 100vh;
-  background-color: #ccc;
+  background-color: #eee;
 }
 .gameboard {
   display: grid;
@@ -64,8 +64,6 @@ body {
   grid-template-rows: repeat(3, 1fr);
   min-width: 600px;
   min-height: 600px;
-  background-color: white;
-  box-shadow: 0 3px 10px #00000080;
   cursor: pointer;
 }
 body,
@@ -75,13 +73,36 @@ body,
   justify-content: center;
 }
 .game-square {
-  border: 1px solid black;
+  border: 2px solid black;
   caret-color: transparent;
   font-size: 5rem;
   user-select: none;
 }
+.game-square:nth-of-type(1),
+.game-square:nth-of-type(2),
+.game-square:nth-of-type(3) {
+  border-top: 0;
+}
+.game-square:nth-of-type(1),
+.game-square:nth-of-type(4),
+.game-square:nth-of-type(7) {
+  border-left: 0;
+}
+.game-square:nth-of-type(3),
+.game-square:nth-of-type(6),
+.game-square:nth-of-type(9) {
+  border-right: 0;
+}
+.game-square:nth-of-type(7),
+.game-square:nth-of-type(8),
+.game-square:nth-of-type(9) {
+  border-bottom: 0;
+}
 .game-square:active {
   background-color: lightblue;
+}
+.selected {
+  animation: plop .2s ease-in-out;
 }
 .selected:active {
   background: url('./images/rick-astley.gif');
@@ -97,4 +118,9 @@ body,
 }
 .winner {
   font-size: 2rem;
+}
+@keyframes plop {
+  from {
+    font-size: 7rem;
+  }
 }
