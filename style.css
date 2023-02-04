@@ -51,6 +51,9 @@ table {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&display=swap');
 
+:root {
+  --boardFont: 6rem;
+}
 body {
   font-family: "Roboto Mono", monospace;
   flex-direction: column;
@@ -67,38 +70,38 @@ body {
   cursor: pointer;
 }
 body,
-.game-square {
+#game-square {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.game-square {
+#game-square {
   border: 2px solid black;
   caret-color: transparent;
-  font-size: 5rem;
+  font-size: var(--boardFont);
   user-select: none;
 }
-.game-square:nth-of-type(1),
-.game-square:nth-of-type(2),
-.game-square:nth-of-type(3) {
+#game-square:nth-of-type(1),
+#game-square:nth-of-type(2),
+#game-square:nth-of-type(3) {
   border-top: 0;
 }
-.game-square:nth-of-type(1),
-.game-square:nth-of-type(4),
-.game-square:nth-of-type(7) {
+#game-square:nth-of-type(1),
+#game-square:nth-of-type(4),
+#game-square:nth-of-type(7) {
   border-left: 0;
 }
-.game-square:nth-of-type(3),
-.game-square:nth-of-type(6),
-.game-square:nth-of-type(9) {
+#game-square:nth-of-type(3),
+#game-square:nth-of-type(6),
+#game-square:nth-of-type(9) {
   border-right: 0;
 }
-.game-square:nth-of-type(7),
-.game-square:nth-of-type(8),
-.game-square:nth-of-type(9) {
+#game-square:nth-of-type(7),
+#game-square:nth-of-type(8),
+#game-square:nth-of-type(9) {
   border-bottom: 0;
 }
-.game-square:active {
+#game-square:active {
   background-color: lightblue;
 }
 .selected {
@@ -121,6 +124,6 @@ body,
 }
 @keyframes plop {
   from {
-    font-size: 7rem;
+    font-size: 7.5rem;
   }
 }
